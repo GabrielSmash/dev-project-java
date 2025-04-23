@@ -1,62 +1,93 @@
-# Santander Dev Week 2023
 
-Java RESTful API criada para a Santander Dev Week.
+# Santander Dev Week 2023 🚀
 
-## Principais Tecnologias
- - **Java 17**: Utilizaremos a versão LTS mais recente do Java para tirar vantagem das últimas inovações que essa linguagem robusta e amplamente utilizada oferece;
- - **Spring Boot 3**: Trabalharemos com a mais nova versão do Spring Boot, que maximiza a produtividade do desenvolvedor por meio de sua poderosa premissa de autoconfiguração;
- - **Spring Data JPA**: Exploraremos como essa ferramenta pode simplificar nossa camada de acesso aos dados, facilitando a integração com bancos de dados SQL;
- - **OpenAPI (Swagger)**: Vamos criar uma documentação de API eficaz e fácil de entender usando a OpenAPI (Swagger), perfeitamente alinhada com a alta produtividade que o Spring Boot oferece;
- - **Railway**: facilita o deploy e monitoramento de nossas soluções na nuvem, além de oferecer diversos bancos de dados como serviço e pipelines de CI/CD.
+Aplicação desenvolvida durante a **Santander Dev Week 2023**, simulando uma API REST de um banco digital. O projeto foi construído com **Spring Boot**, utilizando boas práticas de arquitetura e organização em camadas.
 
-## [Link do Figma](https://www.figma.com/file/0ZsjwjsYlYd3timxqMWlbj/SANTANDER---Projeto-Web%2FMobile?type=design&node-id=1421%3A432&mode=design&t=6dPQuerScEQH0zAn-1)
+## 📦 Sobre o Projeto
 
-O Figma foi utilizado para a abstração do domínio desta API, sendo útil na análise e projeto da solução.
+Este projeto tem como objetivo simular os dados bancários de um usuário, como conta, cartão, funcionalidades e notícias, através de uma API REST estruturada.
 
-## Diagrama de Classes (Domínio da API)
+### 🔧 Tecnologias utilizadas
 
-```mermaid
-classDiagram
-  class User {
-    -String name
-    -Account account
-    -Feature[] features
-    -Card card
-    -News[] news
-  }
+- Java 17
+- Spring Boot
+- Spring Data JPA
+- H2 Database (banco em memória)
+- Gradle
+- Lombok
+- Heroku (para deploy)
+- Swagger (para documentação da API)
 
-  class Account {
-    -String number
-    -String agency
-    -Number balance
-    -Number limit
-  }
+---
 
-  class Feature {
-    -String icon
-    -String description
-  }
+## 📁 Estrutura do Projeto
 
-  class Card {
-    -String number
-    -Number limit
-  }
-
-  class News {
-    -String icon
-    -String description
-  }
-
-  User "1" *-- "1" Account
-  User "1" *-- "N" Feature
-  User "1" *-- "1" Card
-  User "1" *-- "N" News
+```
+src
+├── main
+│   └── java
+│       └── me.dio
+│           ├── controller           # Camada de controle (REST Controllers)
+│           ├── domain
+│           │   ├── model           # Entidades do sistema
+│           │   └── repository      # Interfaces dos repositórios JPA
+│           └── Application.java    # Classe principal (Spring Boot)
+│
+├── resources
+│   ├── application.properties      # Configurações do projeto
 ```
 
-## IMPORTANTE
+---
 
-Este projeto foi construído com um viés totalmente educacional para a DIO. Por isso, disponibilizamos uma versão mais robusta dele no repositório oficial da DIO:
+## 🚀 Como executar
 
-### [digitalinnovationone/santander-dev-week-2023-api](https://github.com/digitalinnovationone/santander-dev-week-2023-api)
+### Pré-requisitos
+- Java 17+
+- Gradle instalado (ou usar os scripts `gradlew`)
 
-Lá incluímos todas os endpoints de CRUD, além de aplicar boas práticas (uso de DTOs e refinamento na documentação da OpenAPI). Sendo assim, caso queira um desafio/referência mais completa é só acessar 👊🤩
+### Passo a passo
+
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/santander-dev-week-2023.git
+cd santander-dev-week-2023
+
+# Execute o projeto
+./gradlew bootRun
+```
+
+Acesse: `http://localhost:8080`
+
+---
+
+## 🧪 Endpoints principais
+
+- `GET /users/{id}` - Retorna os dados do usuário
+- `POST /users` - Cadastra um novo usuário
+- `GET /users` - Lista todos os usuários
+
+> Documentação interativa disponível via Swagger em `/swagger-ui.html` (caso esteja configurado)
+
+---
+
+## 🧠 Aprendizados
+
+Este projeto cobre conceitos como:
+- Arquitetura em camadas
+- Integração com banco de dados usando Spring Data
+- Tratamento global de exceções
+- Uso de anotações do Lombok para reduzir boilerplate
+- Deploy com Heroku
+
+---
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+## 💬 Contato
+
+Desenvolvido por [Seu Nome](https://github.com/seu-usuario) ✨  
+Fique à vontade para abrir issues, dar sugestões ou contribuir com melhorias!
