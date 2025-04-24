@@ -1,5 +1,5 @@
 
-# Santander Dev Week 2023 🚀
+# Projeto Dev com a Digital Innovation One 🚀
 
 Aplicação desenvolvida durante a **Santander Dev Week 2023**, simulando uma API REST de um banco digital. O projeto foi construído com **Spring Boot**, utilizando boas práticas de arquitetura e organização em camadas.
 
@@ -89,5 +89,5 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 💬 Contato
 
-Desenvolvido por [Seu Nome](https://github.com/seu-usuario) ✨  
+Desenvolvido por [Gabriel](https://github.com/GabrielSmash) ✨  
 Fique à vontade para abrir issues, dar sugestões ou contribuir com melhorias!
